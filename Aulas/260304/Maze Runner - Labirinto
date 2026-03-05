@@ -1,0 +1,29 @@
+maze runner:
+	cenário: matriz [n*m] de character, labirinto.
+	Definir obstáculos, de forma aleatória, em células da matriz.
+	Sortear a posição linha coluna da entrada.
+
+	Problema: descobrir um caminho para a saída.
+	
+	Estados: classe contendo: matriz n*n, tipo char, que contem a entrada , saída e os obstáculos; linha entrada, coluna entrada, ambos ints; linha saida, coluna saida, ambos ints.
+	  Estado inicial: Sortear a entrada e a saida em linha e colunas validas, sortear os obstaculos em linhas e colunas validas. 
+    Estado final: entrada chegar na saida; linha de ambas ser igual, coluna de ambas ser igual.
+
+  Regras de transicao, o que pode ser feito:
+    Funcao{
+      if(!restricao): Posso;
+    }
+    Cima: linha da entrada diminui em uma unidade;
+    Baixo: linha da entrada aumenta em uma unidade;
+    Esquerda: coluna da entrada diminui em uma unidade;
+    Direita: coluna da entrada aumenta em uma unidade.
+
+  Restricoes, o que nao pode ser feito:
+    nao pode sair da matriz, tamanho da matriz -1, ou 0. todos com return false.
+
+  Visitados:
+    Armazenar a posicao em que a entrada ja esteve. 
+    String da concatenacao da linha da entrada, com a coluna da entrada. 
+
+  Funcao objetivo: estado final
+    Entrada chegar na saida. Linha da entrada ser igual a saida, coluna da entrada ser igual a da saida.
