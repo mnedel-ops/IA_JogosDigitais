@@ -4,3 +4,9 @@ Problema dos Missionários e Canibais
 Há 3 missionários e 3 canibais. Há também um barco que vai da margem esquerda para a margem direita e vice-versa, sempre levando um ou duas pessoas.
 Todas as pessoas estão na margem esquerda e precisam ir para a margem direita.
 Porém, há restrições: em momento algum pode ficar mais canibais do que missionários em uma das margens, o barco precisa de alguem para rema-lo.
+
+Solução:
+Estados{
+  Os estados para este problema são: Missionarios na margem esquerda (M_esq), que armazena o int do número de missionários na esquerda; Canibais na margem esquerda (C_esq), que armazena um int do número de canibais na esquerda; e a posição do barco (barco), que armazena um string {ESQ, DIR}.
+  E para a margem direita, como o total de pessoas é fixo, ela pode ficar em cálculo: Missionários na direita
+}
