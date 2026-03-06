@@ -1,0 +1,36 @@
+Modelar o seguinte problema:
+Problema dos Missionários e Canibais
+
+Há 3 missionários e 3 canibais. Há também um barco que vai da margem esquerda para a margem direita e vice-versa, sempre levando um ou duas pessoas.
+Todas as pessoas estão na margem esquerda e precisam ir para a margem direita.
+Porém, há restrições: em momento algum pode ficar mais canibais do que missionários em uma das margens, o barco precisa de alguem para rema-lo.
+
+Modelagem:
+1. Estados{
+  Os estados para este problema são: Missionarios na margem esquerda (M_esq), int do número de missionários na esquerda;
+  Canibais na margem esquerda (C_esq), int do número de canibais na esquerda;
+  e a posição do barco (barco), que armazena um string {E ou D};
+  E para a margem direita, ela pode ficar em cálculo: Missionários na direita (M_dir = 3 - M_esq); Canibais na direita (C_dir = 3 - C_esq).
+}
+
+2. Transicoes{
+  Movimentos do barco, ele precisa de uma pessoa (Missionario ou Canibal) para pilota-lo. Combinacoes: (1M,0C), (2M,0C), (0M,1C), (0M,2C), (1M,1C).
+  Se o barco esta na esquerda, ele remove pessoas da margem esquerda. (novo_M_esq = M_esq - m, novo_C_esq = C_esq - c, novo_barco = DIR).
+  Quando na direita, adiciona pessoas para a margem esquerda. (novo_M_esq = M_esq + m, novo_C_esq = C_esq + c, novo_barco = ESQ).
+}
+
+3. Restricoes{
+  Precisa respeitar o limite de pessoas existentes, minimo 0 e o maximo 3;
+  O numero de Missionarios deve ser maior ou igual ao de Canibais; 
+  Uma pessoa é necessaria para pilotar o barco; 
+  a capacidade maxima do barco é 2 pessoas.
+}
+
+4. Lista de visitados{
+  Armazenar um string com o numero de Missionarios na esquerda, Canibais na esquerda e posicao do barco aglutinados (M_esqC_esqbarco),
+  e.g. temos 2 missionarios na esquerda, 2 canibais na esquerda e o barco esta na direita ficaria assim (22D).
+}
+
+5. Funcao objetivo{
+  Concluido quando o estado atual for: 0 Missionarios na esquerda, 0 Canibais na esquerda e o barco estiver na direita, (00D).
+}
