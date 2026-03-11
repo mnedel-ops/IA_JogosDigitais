@@ -24,9 +24,8 @@ O que entregar?
 
 Estados{
     Usar 4 variaveis ints com o valor dos tempos; int aluno = 1; int professora = 2; int zelador = 5; int cientista = 10.
-    Variavel da direcao: string Sentido [Dir, Esq]
-    Sao duas variaveis, Limite e a Atual.
-    Como eh requisito, preciso de outra variavel para limitar o tempo a no maximo 17. Subtrair os visitados depois.
+    Variavel da direcao: char lanterna ['D', 'E']
+    Sao duas variaveis, Limite e a Atual. int tempoAtual = 0; tempoLimite = 17.
     Para controle, ter variavel int para armazenar quantas pessoas estao nas laterais. Consigo com apenas uma variavel.
 }
 
