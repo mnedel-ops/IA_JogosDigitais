@@ -39,9 +39,9 @@ Regras de Transição 2{
 }
 
 Restrições 3{
-    Nao pode ser maior que 17:  
-    if (tempoAtual > tempoLimite):
-        return;
+    Para se mover, alguem precisa carregar a lanterna, ou estar junto de quem a carregar.
+    Maximo de duas pessoas podem se mover, sendo que a mais lenta carrega a lanterna.
+    O tempo das total das travessias nao pode ser maior que 17.
 }
 
 Visitados 4{
