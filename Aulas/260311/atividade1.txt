@@ -45,7 +45,7 @@ Restrições 3{
 }
 
 Visitados 4{
-    transformar em string o conteudo das variaveis e somar ao tempoAtual e comparar com o tempoLimite.
+    Gravar quem esta em cada lado, em que lado a lanterna está e somar ao tempoAtual, o tempo de quem carregou a lanterna.
     Salvar como: (esquerda[], direita[], lanterna, tempoAtual).
 }
 
