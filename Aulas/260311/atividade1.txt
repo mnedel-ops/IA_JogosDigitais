@@ -33,6 +33,16 @@ Regras de Transição{
     Mover no maximo dois em qualquer combinacao; 
     Podem ir da esquerda para a direita;
     Podem ir da direita para a esquerda;
+    Levar aluno,
+        aluno, professora;
+        aluno, zelador;
+        aluno, cientista.
+    Levar professora,
+        professora, zelador;
+        professora, cientista.
+    Levar zelador,
+        zelador, cientista;
+    Levar Cientista.
 }
 
 Restrições{
