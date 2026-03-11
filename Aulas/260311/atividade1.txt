@@ -23,14 +23,14 @@ O que entregar?
 	- disponibilizar no github pessoal (ou outro ambiente de controle de versão) ou enviar para alexz@ufn.edu.br (Assunto: Trabalho1 IA)
 
 Estados{
-    Usar 4 variaveis ints com o valor dos tempos; int aluno = 1; int professora = 2; int zelador = 5; int cientista = 10.
-    Variavel da direcao: char lanterna ['D', 'E']
-    Sao duas variaveis, Limite e a Atual. int tempoAtual = 0; tempoLimite = 17.
-    Para controle, ter variavel int para armazenar quantas pessoas estao nas laterais. Consigo com apenas uma variavel.
+    Usar 4 variaveis ints com o valor dos tempos; int aluno = 1; int professora = 2; int zelador = 5; int cientista = 10;
+    Variavel da direcao: char lanterna ['D', 'E'];
+    Sao duas variaveis, Limite e a Atual. int tempoAtual = 0; tempoLimite = 17;
+    Para controle, ter variavel int para armazenar quantas pessoas estao nas laterais: quantidadePessoasEsquerda = 4; quantidadePessoasDireita = (4 - quantidadePessoasEsquerda);
 }
 
 Regras de Transição{
-    Mover no maximo dois em qualquer combinacao;
+    Mover no maximo dois em qualquer combinacao; 
     Podem ir da esquerda para a direita;
     Podem ir da direita para a esquerda;
 }
@@ -40,7 +40,7 @@ Restrições{
 }
 
 Visitados{
-    Combinacao das pessoas que vao e voltam final. (pessoa1, pessoa2, sentido)
+    transformar em string o conteudo das variaveis e somar ao tempoAtual e comparar com o tempoLimite.
 }
 
 Função objetivo{
