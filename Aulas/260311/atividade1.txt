@@ -32,25 +32,10 @@ Estados 1{
 }
 
 Regras de Transição 2{
-    Pode mover até o máximo de duas pessoas;
+    Elas podem mover da direita para a esquerda e vice-versa.
+    Pode mover ou uma ou duas pessoas, sendo a mais lenta precisa estar com a lanterna;
     Só pode mover se as pessoas estiverem no mesmo lado que a lanterna;
-    O tempo gasto é o maior tempo entre as pessoas movidas, quem demora mais.
-
-    Pode mover ou uma ou duas pessoas, se possuem a lanterna, para o outro lado
-    Mover no maximo dois em qualquer combinacao; 
-    Podem ir da esquerda para a direita;
-    Podem ir da direita para a esquerda;
-    Levar aluno,
-        aluno, professora;
-        aluno, zelador;
-        aluno, cientista.
-    Levar professora,
-        professora, zelador;
-        professora, cientista.
-    Levar zelador,
-        zelador, cientista;
-    Levar Cientista.
-    Levar pessoa1, pessoa2.
+    O tempo gasto é o de quem estiver com a lanterna.
 }
 
 Restrições 3{
