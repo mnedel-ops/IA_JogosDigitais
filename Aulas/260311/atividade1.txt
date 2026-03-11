@@ -40,9 +40,9 @@ Regras de Transição 2{
 }
 
 Restrições 3{
-    Para se mover, alguem precisa carregar a lanterna, ou estar junto de quem a carregar.
-    Maximo de duas pessoas podem se mover, sendo que a mais lenta carrega a lanterna.
-    O tempo das total das travessias nao pode ser maior que 17.
+    Maximo de duas pessoas podem se mover, sendo que a mais lenta carrega a lanterna. Maximo de duas estao se movendo?
+    Para se mover, alguem precisa carregar a lanterna, ou estar junto de quem a carregar. Pessoas estao com a lanterna?
+    O tempo das total das travessias é menor, ou igual, que 17?
 }
 
 Visitados 4{
