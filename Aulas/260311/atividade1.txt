@@ -22,14 +22,15 @@ O que entregar?
 	- colocar em um arquivo .md ou .txt
 	- disponibilizar no github pessoal (ou outro ambiente de controle de versão) ou enviar para alexz@ufn.edu.br (Assunto: Trabalho1 IA)
 
-Estados{
+Estados 1{
     Usar 4 variaveis ints com o valor dos tempos; int aluno = 1; int professora = 2; int zelador = 5; int cientista = 10;
     Variavel da direcao: char lanterna ['D', 'E'];
-    Sao duas variaveis, Limite e a Atual. int tempoAtual = 0; tempoLimite = 17;
-    Para controle, ter variavel int para armazenar quantas pessoas estao nas laterais: quantidadePessoasEsquerda = 4; quantidadePessoasDireita = (4 - quantidadePessoasEsquerda);
+    Para controlar o tempo que levam, sao duas variaveis, limite e a Atual. Mas o tempo maior que deve ser adicionado para o tempo atual. int tempoAtual = 0; int tempoLimite = 17;
+    Para controle, ter variavel int para armazenar quantas pessoas estao nas laterais: int quantidadePessoasEsquerda = 4; int quantidadePessoasDireita = (4 - quantidadePessoasEsquerda);
+    Estado inicial
 }
 
-Regras de Transição{
+Regras de Transição 2{
     Mover no maximo dois em qualquer combinacao; 
     Podem ir da esquerda para a direita;
     Podem ir da direita para a esquerda;
@@ -45,14 +46,17 @@ Regras de Transição{
     Levar Cientista.
 }
 
-Restrições{
-    Nao pode ser maior que 17.
+Restrições 3{
+    Nao pode ser maior que 17:
+    if (tempoAtual > tempoLimite):
+        return;
 }
 
-Visitados{
+Visitados 4{
     transformar em string o conteudo das variaveis e somar ao tempoAtual e comparar com o tempoLimite.
+    Salvar como: (pessoa1, pessoa2, lanterna, tempoAtual)
 }
 
-Função objetivo{
+Função objetivo 5{
     Quando todos sairem do lado esquerdo e irem para o direito.
 }
