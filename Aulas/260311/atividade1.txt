@@ -23,15 +23,20 @@ O que entregar?
 	- disponibilizar no github pessoal (ou outro ambiente de controle de versão) ou enviar para alexz@ufn.edu.br (Assunto: Trabalho1 IA)
 
 Estados 1{
-    Usar 4 variaveis ints com o valor dos tempos; int aluno = 1; int professora = 2; int zelador = 5; int cientista = 10;
-    Variavel para armazenar quem vai ir: int pessoa1 = 0; int pessoa2 = 0;
-    Variavel da direcao: char lanterna ['D', 'E'];
-    Para controle, tempo que levam, sao duas variaveis, limite e a atual. Mas o tempo maior que deve ser adicionado para o tempo atual. int tempoAtual = 0; int tempoLimite = 17;
-    Para controle, ter variavel int para armazenar quantas pessoas estao nas laterais: int quantidadePessoasEsquerda = 4; int quantidadePessoasDireita = (4 - quantidadePessoasEsquerda);
-    Estado inicial 
+    Usar 4 constantes ints com o valor dos tempos, pois não vão alterar; int aluno = 1; int professora = 2; int zelador = 5; int cientista = 10.
+    Variavel para posicoes atuais: esquerda = [aluno, professora, zelador, cientista]; direita = [].
+    Variavel para a posicao atual da lanterna: lanterna = ['D', 'E'];
+    Para controle, tempo que levam e o tempo limite (constante). tempoAtual = 0; tempoLimite = 17;
+    Estado inicial: esquerda = [aluno, professora, zelador, cientista], direita = [], lanterna = E, tempoAtual = 0;
+    Estado final: esquerda = [], direita = [aluno, professora, zelador, cientista], lanterna = D, tempoAtual <= 17;
 }
 
 Regras de Transição 2{
+    Pode mover até o máximo de duas pessoas;
+    Só pode mover se as pessoas estiverem no mesmo lado que a lanterna;
+    O tempo gasto é o maior tempo entre as pessoas movidas, quem demora mais.
+
+    Pode mover ou uma ou duas pessoas, se possuem a lanterna, para o outro lado
     Mover no maximo dois em qualquer combinacao; 
     Podem ir da esquerda para a direita;
     Podem ir da direita para a esquerda;
@@ -56,9 +61,10 @@ Restrições 3{
 
 Visitados 4{
     transformar em string o conteudo das variaveis e somar ao tempoAtual e comparar com o tempoLimite.
-    Salvar como: (pessoa1, pessoa2, lanterna, tempoAtual).
+    Salvar como: (esquerda[], direita[], lanterna, tempoAtual).
 }
 
 Função objetivo 5{
     Quando todos sairem do lado esquerdo e irem para o direito.
+    Estado final: esquerda = [], direita = [aluno, professora, zelador, cientista], lanterna = D, tempoAtual <= 17;
 }
