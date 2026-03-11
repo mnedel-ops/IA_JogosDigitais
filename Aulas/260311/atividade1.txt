@@ -23,10 +23,11 @@ O que entregar?
 	- disponibilizar no github pessoal (ou outro ambiente de controle de versão) ou enviar para alexz@ufn.edu.br (Assunto: Trabalho1 IA)
 
 Estados 1{
-    Usar 4 constantes ints com o valor dos tempos, pois não vão alterar; int aluno = 1; int professora = 2; int zelador = 5; int cientista = 10.
-    Variavel para posicoes atuais: esquerda = [aluno, professora, zelador, cientista]; direita = [].
+    Usar 4 constantes ints com o valor dos tempos, pois não vão alterar. Os tempos sao: aluno = 1; int professora = 2; int zelador = 5; int cientista = 10.
+    Variavel para as posicoes atuais: esquerda = [aluno, professora, zelador, cientista]; direita = [].
     Variavel para a posicao atual da lanterna: lanterna = ['D', 'E'];
-    Para controle, tempo que levam e o tempo limite (constante). tempoAtual = 0; tempoLimite = 17;
+    Tempo que levam e o tempo limite (constante). tempoAtual = 0; tempoLimite = 17;
+    
     Estado inicial: esquerda = [aluno, professora, zelador, cientista], direita = [], lanterna = E, tempoAtual = 0;
     Estado final: esquerda = [], direita = [aluno, professora, zelador, cientista], lanterna = D, tempoAtual <= 17;
 }
@@ -50,6 +51,5 @@ Visitados 4{
 }
 
 Função objetivo 5{
-    Quando todos sairem do lado esquerdo e irem para o direito.
-    Estado final: esquerda = [], direita = [aluno, professora, zelador, cientista], lanterna = D, tempoAtual <= 17;
+    Quando todos sairem do lado esquerdo e irem para o direito, com no maximo 17 minutos.
 }
