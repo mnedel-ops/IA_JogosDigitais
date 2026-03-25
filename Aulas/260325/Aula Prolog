@@ -5,7 +5,9 @@ Prolog-----
 Swish Prolog online -> https://swish.swi-prolog.org/
 Arquivo prolog -> .pl
 Motor de raciocinio do prolog é dedutivo e de Profundidade -> SEMPRE usa Força Bruta.
-Baseada em Fatos -> ou sentenças ou predicados ou assinaturas de funções ou assertiva-> lógica matemática -> nome da funcao(parametro1, parametro2)
-Na linguagem de Prolog -> argumentos ou parametros  -> objeto -> sempre em minusculo.
+Baseada em Fatos -> ou sentenças ou predicados ou assinaturas de funções ou assertiva-> lógica matemática
+Na linguagem de Prolog  -> argumentos ou parametros -> objeto -> sempre em minusculo.
                                                     -> literal -> Jeito que tem que ser -> Aspas duplas "".
                                                     -> variaveis -> Maiuscula.
+                                                    -> nome da funcao(parametro1, parametro2).
+                        -> regras -> sentença com variaveis acompanhadas com ":-", que tem valor de "se, somente se".
