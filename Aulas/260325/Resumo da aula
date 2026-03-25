@@ -1,0 +1,13 @@
+Revisão:
+Modelos de busca -> soluções -> chegar no estado final (ou perto).
+  Problemas   -> Diagnostico -> reconhecer padroes -> treinamento, repeticao.
+              -> Empacotamento -> conjunto de passos até o estado final -> nao se sabe os passos ate o estado final.
+  1. Motores de raciocionio -> deduzir, forca bruta, profundidade;  -> cegos ou força bruta  -> Profundidade -> motor do prolog
+                                                                                             -> Largura, amplitude -> fila, abre em forma de arvore
+                                                                    -> Heuristicos, informados  -> Subida de encosta -> baseado no Profundidade -> olha apenas o custo Real
+                                                                                                -> Guloso (Greedy) -> baseado no Largura -> olha apenas o custo Estimado
+                                                                                                -> A* -> baseado no Largura -> Soma dos custos [(soma de todos g(n)) + h(n)) 
+                                                                                                Custos -> Real, g(n)
+                                                                                                        -> Estimado, h(n)
+  2. base de conhecimento;
+  3. e reconhecer padrões;
