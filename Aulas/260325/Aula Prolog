@@ -12,3 +12,4 @@ Na linguagem de Prolog  -> argumentos ou parametros -> objeto -> sempre em minus
                                                     -> nome da funcao(parametro1, parametro2).
                         -> regras -> sentença com variaveis acompanhadas com ":-", que tem valor de "se, somente se".
 Descobrir o cunhado no PROLOG.
+Fazer a atividade do repositorio de JOGOS de IA
