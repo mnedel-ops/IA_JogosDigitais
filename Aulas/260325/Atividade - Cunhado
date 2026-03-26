@@ -13,12 +13,24 @@ progenitor(marge, meg).
 progenitor(bart, alex).
 progenitor(bart, tina).
 
-avo(A, N):- progenitor(A,P), progenitor(P,N).
+casado(homer, marge).
 
-irmao(B, C):- progenitor(P, B), progenitor(P, C), B \= C.
+avo(A, N):- 
+  progenitor(A,P), 
+  progenitor(P,N).
 
-tio(T, S) :- irmao(I, T), progenitor(I, S).
+irmao(B, C):-
+  progenitor(P, B),
+  progenitor(P, C), 
+  B \= C.
 
-casado(H, M) :- progenitor(H, F), progenitor(M, F).
+tio(T, S) :- 
+  irmao(T, I),
+  progenitor(I, S).
 
-cunhado(C, M) :- casado(H, M), irmao(C, H).
+cunhado(C, M) :- 
+  casado(H, M),
+  irmao(C, H).
+cunhado(C, H) :- 
+  casado(H, M),
+  irmao(C, M).
