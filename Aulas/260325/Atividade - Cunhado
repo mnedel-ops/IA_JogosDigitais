@@ -1,0 +1,24 @@
+progenitor(herbert, cleber).
+progenitor(herbert, homer).
+
+progenitor(homer, bart).
+progenitor(marge, bart).
+
+progenitor(homer, lisa).
+progenitor(marge, lisa).
+
+progenitor(homer, meg).
+progenitor(marge, meg).
+
+progenitor(bart, alex).
+progenitor(bart, tina).
+
+avo(A, N):- progenitor(A,P), progenitor(P,N).
+
+irmao(B, C):- progenitor(P, B), progenitor(P, C), B \= C.
+
+tio(T, S) :- irmao(I, T), progenitor(I, S).
+
+casado(H, M) :- progenitor(H, F), progenitor(M, F).
+
+cunhado(C, M) :- casado(H, M), irmao(C, H).
