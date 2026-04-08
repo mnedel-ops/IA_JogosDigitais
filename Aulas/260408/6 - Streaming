@@ -1,0 +1,21 @@
+% Lista 1: Filmes
+filme('Interestelar', 'Ficção Científica').
+filme('Matrix', 'Ficção Científica').
+filme('Ex Machina', 'Ficção Científica').
+filme('O Poderoso Chefão', 'Drama').
+filme('Clube da Luta', 'Drama').
+filme('A Lista de Schindler', 'Drama').
+filme('Procurando Nemo', 'Animação').
+filme('Toy Story', 'Animação').
+filme('Viva – A Vida é uma Festa', 'Animação').
+filme('Shrek', 'Animação').
+
+% Lista 2: Usuários e gêneros que gostam
+usuario_gosta('Alice', 'Ficção Científica').
+usuario_gosta('Bob', 'Drama').
+usuario_gosta('Carla', 'Animação').
+usuario_gosta('Daniel', 'Ficção Científica').
+
+recomendar(Filme, Usuario) :-
+    usuario_gosta(Usuario, Genero),
+    filme(Filme, Genero).
