@@ -1,0 +1,27 @@
+% Lista 1: Ingredientes
+vegano('Tomate').
+vegano('Alface').
+vegano('Feijão').
+vegano('Cenoura').
+vegano('Batata').
+
+item('Frango').
+item('Carne').
+item('Queijo').
+item('Ovo').
+item('Leite').
+
+% Lista 2: Pratos com ingredientes
+prato('Salada de Legumes', 'Tomate').
+prato('Salada de Legumes', 'Alface').
+prato('Feijoada', 'Feijão').
+prato('Feijoada', 'Carne').
+prato('Purê de Batata', 'Batata').
+prato('Omelete', 'Ovo').
+prato('Omelete', 'Queijo').
+prato('Cenoura Cozida', 'Cenoura').
+
+% Lista 3: Pratos veganos
+prato_vegano(Nome) :-
+    prato(Nome, _),
+    \+ (prato(Nome, Item), \+ vegano(Item)).
