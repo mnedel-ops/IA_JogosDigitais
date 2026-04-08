@@ -1,0 +1,16 @@
+%Fatos:
+estrada('Santa Cruz do Sul', 'Venâncio Aires').
+estrada('Lajeado', 'Estrela').
+estrada('Caxias do Sul', 'Farroupilha').
+estrada('Gramado', 'Canela').
+estrada('Rio Grande', 'Pelotas').
+estrada('Pelotas', 'São Lourenço do Sul').
+estrada('São Lourenço do Sul', 'Camaquã').
+estrada('Camaquã', 'Tapes').
+estrada('Tapes', 'Barra do Ribeiro').
+estrada('Barra do Ribeiro', 'Guaíba').
+estrada('Guaíba', 'Porto Alegre').
+
+%Regras:
+pode_viajar(De, Para) :-
+    estrada(De, Para).
