@@ -1,0 +1,46 @@
+%Fatos:----------------------------------------------------------------------------------------------------------------
+
+cadeira('Fundamentos_Jogos_Digitais').
+cadeira('Logica_Programacao_Jogos').
+cadeira('Modelagem_Animacao_3D').
+
+cadeira('Design_Jogos').
+cadeira('Programacao_Jogos_2D').
+cadeira('Programacao_Jogos_3D').
+
+requer('Programacao_Jogos_2D', 'Logica_Programacao_Jogos'). %Programacao de Jogos 2D requer Logica de Programacao.
+requer('Programacao_Jogos_3D', 'Programacao_Jogos_2D'). %Programacao de Jogos 3D requer Jogos 2D.
+requer('Design_Jogos','Fundamentos_Jogos_Digitais'). %Design de jogos requer Fundamentos de Jogos.
+
+aluno('Andrisa').
+aluno('Mateus').
+aluno('Estilichus').
+
+%nota(aluno, cadeira, nota) nota('','',).
+
+nota('Andrisa','Fundamentos_Jogos_Digitais', 10.0).
+nota('Andrisa','Logica_Programacao_Jogos', 10.0).
+nota('Andrisa','Modelagem_Animacao_3D', 10.0).
+
+nota('Mateus','Fundamentos_Jogos_Digitais', 8.0).
+nota('Mateus','Design_Jogos', 10.0).
+nota('Mateus','Logica_Programacao_Jogos', 7.0).
+nota('Mateus','Programacao_Jogos_2D', 5.4).
+
+nota('Estilichus','Fundamentos_Jogos_Digitais', 7.0).
+nota('Estilichus','Logica_Programacao_Jogos', 7.0).
+nota('Estilichus','Modelagem_Animacao_3D', 7.0).
+nota('Estilichus','Programacao_Jogos_3D', 7.0).
+nota('Estilichus','Programacao_Jogos_2D', 7.0).
+nota('Estilichus','Design_Jogos', 7.0).
+
+%Regras:---------------------------------------------------
+
+aprovado(Aluno, Cadeira, Nota) :-
+    nota(Aluno, Cadeira, Nota),
+    Nota >= 7.
+
+reprovado(Aluno, Cadeira, Nota) :-
+	nota(Aluno, Cadeira, Nota),
+    Nota < 7.
+    
