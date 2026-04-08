@@ -1,0 +1,20 @@
+esta_em('Sofá', 'Sala').
+esta_em('Televisão', 'Sala').
+esta_em('Cama', 'Quarto').
+esta_em('Guarda-roupa', 'Quarto').
+esta_em('Fogão', 'Cozinha').
+esta_em('Geladeira', 'Cozinha').
+esta_em('Vaso Sanitário', 'Banheiro').
+esta_em('Chuveiro', 'Banheiro').
+
+comodo_em('Sala', 'Casa').
+comodo_em('Quarto', 'Casa').
+comodo_em('Cozinha', 'Casa').
+comodo_em('Banheiro', 'Casa').
+
+localizacao_geral(Objeto, Casa) :-
+    esta_em(Objeto, Casa).
+
+localizacao_geral(Objeto, Casa) :-
+    esta_em(Objeto, Comodo),
+    comodo_em(Comodo, Casa).
