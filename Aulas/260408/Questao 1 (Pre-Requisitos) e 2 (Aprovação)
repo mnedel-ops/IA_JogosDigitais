@@ -32,7 +32,7 @@ nota('Estilichus','Programacao_Jogos_3D', 7.0).
 nota('Estilichus','Programacao_Jogos_2D', 7.0).
 nota('Estilichus','Design_Jogos', 7.0).
 
-
+%Juntei as duas por nao conseguir fazer separadas. E eu achei que eram pontos da questao.
 %Regras, questao 2:---------------------------------------------------
 
 aprovado(Aluno, Cadeira, Nota) :-
