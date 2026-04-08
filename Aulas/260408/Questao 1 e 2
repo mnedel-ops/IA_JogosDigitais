@@ -16,8 +16,6 @@ aluno('Andrisa').
 aluno('Mateus').
 aluno('Estilichus').
 
-%nota(aluno, cadeira, nota) nota('','',).
-
 nota('Andrisa','Fundamentos_Jogos_Digitais', 10.0).
 nota('Andrisa','Logica_Programacao_Jogos', 10.0).
 nota('Andrisa','Modelagem_Animacao_3D', 10.0).
@@ -34,7 +32,8 @@ nota('Estilichus','Programacao_Jogos_3D', 7.0).
 nota('Estilichus','Programacao_Jogos_2D', 7.0).
 nota('Estilichus','Design_Jogos', 7.0).
 
-%Regras:---------------------------------------------------
+
+%Regras, questao 2:---------------------------------------------------
 
 aprovado(Aluno, Cadeira, Nota) :-
     nota(Aluno, Cadeira, Nota),
@@ -44,3 +43,12 @@ reprovado(Aluno, Cadeira, Nota) :-
 	nota(Aluno, Cadeira, Nota),
     Nota < 7.
     
+
+%Regras, questao 1:
+pode_cursar(Aluno, Cadeira) :-
+    requer(Cadeira, Requer),
+	nota(Aluno, Requer, Nota),
+    Nota >= 7,
+	not(nota(Aluno, Cadeira, Nota)),
+    Nota >= 7.
+
