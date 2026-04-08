@@ -14,3 +14,5 @@ estrada('Guaíba', 'Porto Alegre').
 %Regras:
 pode_viajar(De, Para) :-
     estrada(De, Para).
+
+%O Prolog nao entende simetria, apenas entende o que for digitado. 
