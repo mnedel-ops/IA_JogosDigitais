@@ -1,0 +1,28 @@
+% Blocos que não têm nada sobre eles (topo)
+sobre('Nenhum', 'Bloco3').
+sobre('Nenhum', 'Bloco5').
+sobre('Nenhum', 'Bloco7').
+sobre('Nenhum', 'Bloco9').
+sobre('Nenhum', 'Bloco10').
+
+% Relação de blocos sobre outros blocos invertida
+sobre('Bloco2', 'Bloco1'). %O BlocoA esta sobre o BlocoB -> sobre(BlocoA, BlocoB)
+sobre('Bloco3', 'Bloco2').
+sobre('Bloco5', 'Bloco4').
+sobre('Bloco7', 'Bloco6').
+sobre('Bloco9', 'Bloco8').
+
+% Blocos que estão no chão
+no_chao('Bloco1').
+no_chao('Bloco4').
+no_chao('Bloco6').
+no_chao('Bloco8').
+no_chao('Bloco10').
+
+%Regras:
+bloco_livre(X) :-
+    sobre('Nenhum', X).
+
+abaixo(X, Y) :- %Retorna apenas os que estao abaixo de outro bloco.
+    sobre(Y, X),
+    \+ bloco_livre(X).
