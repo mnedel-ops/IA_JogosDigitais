@@ -11,7 +11,7 @@ filme('Viva – A Vida é uma Festa', 'Animação').
 filme('Shrek', 'Animação').
 
 % Lista 2: Usuários e gêneros que gostam
-usuario_gosta('Alice', 'Ficção Científica').
+usuario_gosta('Andrisa', 'Ficção Científica').
 usuario_gosta('Bob', 'Drama').
 usuario_gosta('Carla', 'Animação').
 usuario_gosta('Daniel', 'Ficção Científica').
