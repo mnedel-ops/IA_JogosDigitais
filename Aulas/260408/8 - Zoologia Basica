@@ -1,0 +1,39 @@
+tem_penas('Pinguim').
+tem_penas('Papagaio').
+tem_penas('Águia').
+
+tem_asas('Pinguim').
+tem_asas('Papagaio').
+tem_asas('Águia').
+tem_asas('Morcego').
+
+da_leite('Leão').
+da_leite('Elefante').
+da_leite('Coala').
+da_leite('Morcego').
+
+sangue_frio('Cobra').
+sangue_frio('Jacaré').
+sangue_frio('Tartaruga').
+
+poe_ovo('Pinguim').
+poe_ovo('Papagaio').
+poe_ovo('Águia').
+poe_ovo('Cobra').
+poe_ovo('Jacaré').
+poe_ovo('Tartaruga').
+
+
+ave(X) :-
+    poe_ovo(X), 
+    tem_penas(X),
+    tem_asas(X).
+
+mamifero(X) :- 
+    da_leite(X).
+
+reptil(X) :-
+    sangue_frio(X),
+    poe_ovo(X).
+    
+    
