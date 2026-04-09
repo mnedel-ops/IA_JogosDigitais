@@ -1,0 +1,26 @@
+% Oitavas de final
+venceu('Ryu', 'Ken').
+venceu('Chun-Li', 'Guile').
+venceu('Paul', 'Marshall Law').
+venceu('Nina', 'Yoshimitsu').
+venceu('Heihachi', 'Hwoarang').
+venceu('Jin', 'Lei').
+venceu('King', 'Eddy').
+venceu('Bryan', 'Anna').
+
+% Quartas de final
+venceu('Ryu', 'Chun-Li').
+venceu('Paul', 'Nina').
+venceu('Heihachi', 'Jin').
+venceu('King', 'Bryan').
+
+% Semifinais
+venceu('Ryu', 'Paul').
+venceu('Heihachi', 'King').
+
+% Final
+venceu('Ryu', 'Heihachi').
+
+invicto(X) :-
+    venceu(X, _),
+    \+ venceu(_, X).
