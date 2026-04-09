@@ -1,0 +1,50 @@
+%Lista de Clientes
+cliente('Andrisa', 10000.20).
+cliente('Bruno', 9.80).
+cliente('Carla', 15.40).
+cliente('Daniel', 67.30).
+cliente('Eduarda', 22.10).
+cliente('Fábio', 31.00).
+cliente('Gisele', 1450.25).
+cliente('Henrique', 8.90).
+
+%Produtos:
+produto('Arroz', 20.50).
+produto('Feijão', 12.30).
+produto('Macarrão', 8.90).
+produto('Óleo', 7.50).
+produto('Açúcar', 5.80).
+produto('Sal', 2.50).
+produto('Leite', 4.20).
+produto('Pão', 3.40).
+produto('Manteiga', 6.10).
+produto('Queijo', 15.75).
+produto('Presunto', 14.60).
+produto('Frango', 18.90).
+produto('Carne Bovina', 35.50).
+produto('Peixe', 28.40).
+produto('Ovos', 10.20).
+produto('Tomate', 6.80).
+produto('Cebola', 4.50).
+produto('Alface', 3.00).
+produto('Batata', 7.20).
+produto('Cenoura', 5.50).
+produto('Maçã', 8.20).
+produto('Banana', 6.00).
+produto('Laranja', 7.10).
+produto('Abacaxi', 12.00).
+produto('Suco de Laranja', 9.50).
+produto('Refrigerante', 6.75).
+produto('Cerveja', 5.90).
+produto('Vinho', 45.00).
+produto('Chocolate', 11.20).
+produto('Biscoito', 4.80).
+produto('Café', 14.00).
+produto('Chá', 6.30).
+produto('Televisão', 4500.00).
+
+%Regra:
+pode_comprar(Nome, Produto) :-
+    cliente(Nome, Saldo),
+    produto(Produto, Preco),
+    Preco =< Saldo.
