@@ -1,0 +1,11 @@
+Metododos de busca -> Motores -> dedução ->> indicação.
+
+Prolog   -> base de conhecimento -> fato ->> regra; 
+          -> apicação do motor -> profundidade.
+
+Tecnicas de IA -> SCI -> Base,  Motor, Aprendizagem
+  -> Categorias de problemas -> Diagnotico ->> Gerar e Testar.
+
+Complexidade -> faz muita força. 
+  aumenta -> quantidade de restricoes ->> heuristica. 
+
