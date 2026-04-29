@@ -1,0 +1,5 @@
+Baseado na teoria da Evolução. Método de busca Heuristico Turbinado, Xiru. Usado para problemas de alta complexidade, várias restrições. Usa Heuristica Negativa. Caso queira um jogador de vole, em vez de perguntar quem é alta, pergunta quem é baixo. Calcula em tempo real a Heuristica.
+Cuida quanto de falha ele gera. Saber quem não pode.
+Usa um vetor de estados, População. Onde cada Estado é o Individuo. E o Atributo é o Gene.
+  E quando a proxima População é gerada, 30% são selecionados e 70% reproduzem.
+
