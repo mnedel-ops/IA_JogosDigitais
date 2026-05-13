@@ -4,14 +4,16 @@ Algoritmo generico.
   TORNEIO -> Eu pego uma parcela aleatoriamente, e escolho o melhor deles e baixo.
   Basicamente um monte de rolagem de dados. DEVO respeitar o que for gerado.
   Cria um jogo para o computador. Eu sei que para ganhar, ele precisa alcançar a condição de vitória. Como ele vai chegar? É a diversão.
+
 Util quando tem:
   -> Muita restrição;
   -> Se desconhece o resultado final.
   Eu sei que eu quero o melhor, mas nao sei como ele vai ser.
 
 A nova linhagem é escolhida por:
-  -> Seleção aleatoória, seja um torneio ou etc. Representa uma parcela pequena, dando oportunidade para todos os individuos.
-  -> Cruza: pega uma parcela dos atributos de dois, e cria um novo. ALEATÓRIO a combinação dos atributos.
-  -> Mutção, adiciona-se o caos. Quando a Ordem for muita.
+  -> Seleção aleatoória, seja um torneio ou etc. Representa uma parcela pequena, dando oportunidade para todos os individuos. Não cria individuos novos.
+  -> Cruza: pega uma parcela dos atributos de dois, e cria um novo. ALEATÓRIO a combinação dos atributos. Cria individuos novos.
+  
+  -> Mutação, adiciona-se o caos. Quando a Ordem for muita.
   -> Elitismo: pega o melhor individuo, e faz um heroi dele, mantem ele vivo, até aparecer um melhor. Cria um Aragorn. 
   
