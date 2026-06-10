@@ -1,5 +1,4 @@
 import random
-from pathlib import Path
 
 class Perceptron:
     # Metodo construtor.
@@ -81,11 +80,8 @@ class Perceptron:
             import matplotlib.pyplot as plt  # type: ignore
             import numpy as np
         except ModuleNotFoundError as erro:
-            nome_svg = Path(nome_arquivo).with_suffix('.svg')
-            print(
-                f'Biblioteca "{erro.name}" nao instalada. '
-                f'Gerando grafico em SVG: {nome_svg}'
-            )
+            nome_svg = nome_arquivo.rsplit('.', 1)[0] + '.svg'
+            print(f'Biblioteca "{erro.name}" nao instalada. Gerando grafico em SVG.')
             self.plotar_grafico_svg(amostras, saidas, nome_svg)
             return
 
@@ -130,115 +126,86 @@ class Perceptron:
     def plotar_grafico_svg(self, amostras, saidas, nome_arquivo='grafico.svg'):
         largura = 800
         altura = 600
-        margem_esquerda = 80
-        margem_direita = 40
-        margem_topo = 60
+        margem_esq = 90
+        margem_dir = 40
+        margem_topo = 70
         margem_baixo = 80
-        grafico_largura = largura - margem_esquerda - margem_direita
-        grafico_altura = altura - margem_topo - margem_baixo
+        x_min, x_max = -0.05, 1.05
+        y_min, y_max = -0.05, 1.05
+        area_largura = largura - margem_esq - margem_dir
+        area_altura = altura - margem_topo - margem_baixo
 
-        def escala_x(valor):
-            return margem_esquerda + valor * grafico_largura
+        def mapa_x(x):
+            return margem_esq + (x - x_min) / (x_max - x_min) * area_largura
 
-        def escala_y(valor):
-            return margem_topo + (1 - valor) * grafico_altura
+        def mapa_y(y):
+            return margem_topo + (y_max - y) / (y_max - y_min) * area_altura
 
-        elementos = [
-            '<svg xmlns="http://www.w3.org/2000/svg" '
-            f'width="{largura}" height="{altura}" viewBox="0 0 {largura} {altura}">',
+        linhas = [
+            '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">',
             '<rect width="100%" height="100%" fill="white"/>',
-            '<text x="400" y="32" text-anchor="middle" '
-            'font-family="Arial" font-size="22" font-weight="bold">'
-            'Perceptron - Classificacao Chuva vs Sol</text>',
+            '<text x="400" y="35" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">Perceptron - Classificacao Chuva vs Sol</text>',
+            f'<line x1="{margem_esq}" y1="{margem_topo + area_altura}" x2="{margem_esq + area_largura}" y2="{margem_topo + area_altura}" stroke="black" stroke-width="2"/>',
+            f'<line x1="{margem_esq}" y1="{margem_topo}" x2="{margem_esq}" y2="{margem_topo + area_altura}" stroke="black" stroke-width="2"/>',
         ]
 
-        for i in range(11):
-            valor = i / 10
-            x = escala_x(valor)
-            y = escala_y(valor)
-
-            elementos.append(
-                f'<line x1="{x:.1f}" y1="{margem_topo}" '
-                f'x2="{x:.1f}" y2="{altura - margem_baixo}" '
-                'stroke="#dddddd" stroke-width="1"/>'
-            )
-            elementos.append(
-                f'<line x1="{margem_esquerda}" y1="{y:.1f}" '
-                f'x2="{largura - margem_direita}" y2="{y:.1f}" '
-                'stroke="#dddddd" stroke-width="1"/>'
-            )
-            elementos.append(
-                f'<text x="{x:.1f}" y="{altura - margem_baixo + 24}" '
-                'text-anchor="middle" font-family="Arial" font-size="12">'
-                f'{valor:.1f}</text>'
-            )
-            elementos.append(
-                f'<text x="{margem_esquerda - 12}" y="{y + 4:.1f}" '
-                'text-anchor="end" font-family="Arial" font-size="12">'
-                f'{valor:.1f}</text>'
-            )
-
-        elementos.extend([
-            f'<line x1="{margem_esquerda}" y1="{altura - margem_baixo}" '
-            f'x2="{largura - margem_direita}" y2="{altura - margem_baixo}" '
-            'stroke="black" stroke-width="2"/>',
-            f'<line x1="{margem_esquerda}" y1="{margem_topo}" '
-            f'x2="{margem_esquerda}" y2="{altura - margem_baixo}" '
-            'stroke="black" stroke-width="2"/>',
-            f'<text x="{margem_esquerda + grafico_largura / 2}" '
-            f'y="{altura - 25}" text-anchor="middle" '
-            'font-family="Arial" font-size="16">Umidade Normalizada</text>',
-            f'<text x="22" y="{margem_topo + grafico_altura / 2}" '
-            'text-anchor="middle" font-family="Arial" font-size="16" '
-            'transform="rotate(-90 22 300)">Pressao Normalizada</text>',
-        ])
+        for i in range(6):
+            valor = i / 5
+            x = mapa_x(valor)
+            y = mapa_y(valor)
+            linhas.append(f'<line x1="{x:.1f}" y1="{margem_topo}" x2="{x:.1f}" y2="{margem_topo + area_altura}" stroke="#dddddd"/>')
+            linhas.append(f'<line x1="{margem_esq}" y1="{y:.1f}" x2="{margem_esq + area_largura}" y2="{y:.1f}" stroke="#dddddd"/>')
+            linhas.append(f'<text x="{x:.1f}" y="{margem_topo + area_altura + 25}" text-anchor="middle" font-family="Arial" font-size="12">{valor:.1f}</text>')
+            linhas.append(f'<text x="{margem_esq - 12}" y="{y + 4:.1f}" text-anchor="end" font-family="Arial" font-size="12">{valor:.1f}</text>')
 
         if len(self.pesos) >= 3:
             w0, w1, w2 = self.pesos[0], self.pesos[1], self.pesos[2]
+            pontos_linha = []
 
             if abs(w2) > 1e-6:
-                pontos_linha = []
+                for x_real in (x_min, x_max):
+                    y_real = -(w0 + w1 * x_real) / w2
+                    if y_min <= y_real <= y_max:
+                        pontos_linha.append((x_real, y_real))
 
-                for i in range(101):
-                    x = i / 100
-                    y = -(w0 + w1 * x) / w2
+            if abs(w1) > 1e-6:
+                for y_real in (y_min, y_max):
+                    x_real = -(w0 + w2 * y_real) / w1
+                    if x_min <= x_real <= x_max:
+                        pontos_linha.append((x_real, y_real))
 
-                    if 0 <= y <= 1:
-                        pontos_linha.append(f'{escala_x(x):.1f},{escala_y(y):.1f}')
-
-                if pontos_linha:
-                    elementos.append(
-                        '<polyline points="{}" fill="none" stroke="green" '
-                        'stroke-width="4"/>'.format(' '.join(pontos_linha))
-                    )
+            if len(pontos_linha) >= 2:
+                p1, p2 = pontos_linha[0], pontos_linha[1]
+                linhas.append(
+                    f'<line x1="{mapa_x(p1[0]):.1f}" y1="{mapa_y(p1[1]):.1f}" '
+                    f'x2="{mapa_x(p2[0]):.1f}" y2="{mapa_y(p2[1]):.1f}" '
+                    'stroke="green" stroke-width="4"/>'
+                )
 
         for amostra, saida in zip(amostras, saidas):
-            x = escala_x(amostra[0])
-            y = escala_y(amostra[1])
+            x = mapa_x(amostra[0])
+            y = mapa_y(amostra[1])
 
             if saida == 1:
-                elementos.append(
-                    f'<rect x="{x - 7:.1f}" y="{y - 7:.1f}" width="14" height="14" '
-                    'fill="royalblue" stroke="black" stroke-width="1"/>'
-                )
+                linhas.append(f'<rect x="{x - 6:.1f}" y="{y - 6:.1f}" width="12" height="12" fill="royalblue"/>')
             else:
-                elementos.append(
-                    f'<circle cx="{x:.1f}" cy="{y:.1f}" r="8" '
-                    'fill="orange" stroke="black" stroke-width="1"/>'
-                )
+                pontos = f'{x:.1f},{y - 8:.1f} {x + 8:.1f},{y:.1f} {x:.1f},{y + 8:.1f} {x - 8:.1f},{y:.1f}'
+                linhas.append(f'<polygon points="{pontos}" fill="orange"/>')
 
-        elementos.extend([
-            '<circle cx="610" cy="92" r="8" fill="orange" stroke="black"/>',
-            '<text x="628" y="97" font-family="Arial" font-size="14">Sol (-1)</text>',
-            '<rect x="602" y="115" width="16" height="16" fill="royalblue" stroke="black"/>',
-            '<text x="628" y="128" font-family="Arial" font-size="14">Chuva (1)</text>',
-            '<line x1="600" y1="150" x2="620" y2="150" stroke="green" stroke-width="4"/>',
-            '<text x="628" y="155" font-family="Arial" font-size="14">Fronteira</text>',
+        linhas.extend([
+            '<text x="400" y="570" text-anchor="middle" font-family="Arial" font-size="15">Umidade Normalizada</text>',
+            '<text x="25" y="300" text-anchor="middle" font-family="Arial" font-size="15" transform="rotate(-90 25 300)">Pressao Normalizada</text>',
+            '<rect x="575" y="75" width="14" height="14" fill="royalblue"/>',
+            '<text x="598" y="87" font-family="Arial" font-size="13">Chuva (1)</text>',
+            '<polygon points="582,110 590,118 582,126 574,118" fill="orange"/>',
+            '<text x="598" y="122" font-family="Arial" font-size="13">Sol (-1)</text>',
+            '<line x1="574" y1="145" x2="590" y2="145" stroke="green" stroke-width="4"/>',
+            '<text x="598" y="149" font-family="Arial" font-size="13">Fronteira de Decisao</text>',
             '</svg>',
         ])
 
         with open(nome_arquivo, 'w', encoding='utf-8') as arquivo:
-            arquivo.write('\n'.join(elementos))
+            arquivo.write('\n'.join(linhas))
 
         print(f'Grafico salvo em: {nome_arquivo}')
 
@@ -246,21 +213,41 @@ class Perceptron:
 def main():
     # Amostras para treinamento: [umidade, pressao].
     amostras = [
-        [0.20, 0.90],  # Ar seco, pressao alta -> Sol
-        [0.35, 0.85],  # Ar seco, pressao alta -> Sol
-        [0.15, 0.75],  # Muito seco, pressao media -> Sol
-        [0.40, 0.80],  # Umidade media, pressao alta -> Sol
-        [0.55, 0.45],  # Umidade media, pressao baixa -> Chuva
-        [0.85, 0.30],  # Muito umido, pressao baixa -> Chuva
-        [0.90, 0.20],  # Muito umido, pressao muito baixa -> Chuva
-        [0.75, 0.35],  # Umido, pressao baixa -> Chuva
+            # --- Sol ---
+    [0.20, 0.90],  # Ar seco, pressão alta
+    [0.35, 0.85],  # Ar seco, pressão alta
+    [0.15, 0.75],  # Muito seco, pressão média
+    [0.40, 0.80],  # Umidade média-baixa, pressão alta
+    [0.10, 0.95],  # Muito seco, pressão muito alta
+    [0.25, 0.70],  # Seco, pressão média-alta
+    [0.30, 0.88],  # Seco, pressão alta
+    [0.45, 0.72],  # Umidade média-baixa, pressão média-alta
+    [0.18, 0.82],  # Muito seco, pressão alta
+    [0.38, 0.91],  # Seco, pressão muito alta
+    [0.12, 0.68],  # Muito seco, pressão média
+    [0.42, 0.77],  # Umidade média-baixa, pressão alta
+    # --- Chuva ---
+    [0.55, 0.45],  # Umidade média, pressão baixa
+    [0.85, 0.30],  # Muito úmido, pressão baixa
+    [0.90, 0.20],  # Muito úmido, pressão muito baixa
+    [0.75, 0.35],  # Úmido, pressão baixa
+    [0.95, 0.10],  # Saturado, pressão muito baixa
+    [0.70, 0.25],  # Úmido, pressão muito baixa
+    [0.60, 0.40],  # Úmido, pressão baixa
+    [0.80, 0.15],  # Muito úmido, pressão muito baixa
+    [0.65, 0.32],  # Úmido, pressão baixa
+    [0.78, 0.42],  # Muito úmido, pressão baixa
+    [0.88, 0.22],  # Muito úmido, pressão muito baixa
+    [0.58, 0.38],  # Úmido, pressão baixa
     ]
 
-    saidas = [-1, -1, -1, -1, 1, 1, 1, 1]
+    saidas = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+           1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1]
+
 
     rede = Perceptron(amostras, saidas)
     rede.treinar()
-    rede.plotar_grafico(amostras, saidas, 'grafico.svg')
+    rede.plotar_grafico(amostras, saidas, 'grafico.png')
 
     while True:
         x = float(input('Valor da umidade: '))
