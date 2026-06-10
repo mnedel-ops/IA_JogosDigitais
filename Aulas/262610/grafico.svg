@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+<rect width="100%" height="100%" fill="white"/>
+<text x="400" y="32" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold">Perceptron - Classificacao Chuva vs Sol</text>
+<line x1="80.0" y1="60" x2="80.0" y2="520" stroke="#dddddd" stroke-width="1"/>
+<line x1="80" y1="520.0" x2="760" y2="520.0" stroke="#dddddd" stroke-width="1"/>
+<text x="80.0" y="544" text-anchor="middle" font-family="Arial" font-size="12">0.0</text>
+<text x="68" y="524.0" text-anchor="end" font-family="Arial" font-size="12">0.0</text>
+<line x1="148.0" y1="60" x2="148.0" y2="520" stroke="#dddddd" stroke-width="1"/>
+<line x1="80" y1="474.0" x2="760" y2="474.0" stroke="#dddddd" stroke-width="1"/>
+<text x="148.0" y="544" text-anchor="middle" font-family="Arial" font-size="12">0.1</text>
+<text x="68" y="478.0" text-anchor="end" font-family="Arial" font-size="12">0.1</text>
+<line x1="216.0" y1="60" x2="216.0" y2="520" stroke="#dddddd" stroke-width="1"/>
+<line x1="80" y1="428.0" x2="760" y2="428.0" stroke="#dddddd" stroke-width="1"/>
+<text x="216.0" y="544" text-anchor="middle" font-family="Arial" font-size="12">0.2</text>
+<text x="68" y="432.0" text-anchor="end" font-family="Arial" font-size="12">0.2</text>
+<line x1="284.0" y1="60" x2="284.0" y2="520" stroke="#dddddd" stroke-width="1"/>
+<line x1="80" y1="382.0" x2="760" y2="382.0" stroke="#dddddd" stroke-width="1"/>
+<text x="284.0" y="544" text-anchor="middle" font-family="Arial" font-size="12">0.3</text>
+<text x="68" y="386.0" text-anchor="end" font-family="Arial" font-size="12">0.3</text>
+<line x1="352.0" y1="60" x2="352.0" y2="520" stroke="#dddddd" stroke-width="1"/>
+<line x1="80" y1="336.0" x2="760" y2="336.0" stroke="#dddddd" stroke-width="1"/>
+<text x="352.0" y="544" text-anchor="middle" font-family="Arial" font-size="12">0.4</text>
+<text x="68" y="340.0" text-anchor="end" font-family="Arial" font-size="12">0.4</text>
+<line x1="420.0" y1="60" x2="420.0" y2="520" stroke="#dddddd" stroke-width="1"/>
+<line x1="80" y1="290.0" x2="760" y2="290.0" stroke="#dddddd" stroke-width="1"/>
+<text x="420.0" y="544" text-anchor="middle" font-family="Arial" font-size="12">0.5</text>
+<text x="68" y="294.0" text-anchor="end" font-family="Arial" font-size="12">0.5</text>
+<line x1="488.0" y1="60" x2="488.0" y2="520" stroke="#dddddd" stroke-width="1"/>
+<line x1="80" y1="244.0" x2="760" y2="244.0" stroke="#dddddd" stroke-width="1"/>
+<text x="488.0" y="544" text-anchor="middle" font-family="Arial" font-size="12">0.6</text>
+<text x="68" y="248.0" text-anchor="end" font-family="Arial" font-size="12">0.6</text>
+<line x1="556.0" y1="60" x2="556.0" y2="520" stroke="#dddddd" stroke-width="1"/>
+<line x1="80" y1="198.0" x2="760" y2="198.0" stroke="#dddddd" stroke-width="1"/>
+<text x="556.0" y="544" text-anchor="middle" font-family="Arial" font-size="12">0.7</text>
+<text x="68" y="202.0" text-anchor="end" font-family="Arial" font-size="12">0.7</text>
+<line x1="624.0" y1="60" x2="624.0" y2="520" stroke="#dddddd" stroke-width="1"/>
+<line x1="80" y1="152.0" x2="760" y2="152.0" stroke="#dddddd" stroke-width="1"/>
+<text x="624.0" y="544" text-anchor="middle" font-family="Arial" font-size="12">0.8</text>
+<text x="68" y="156.0" text-anchor="end" font-family="Arial" font-size="12">0.8</text>
+<line x1="692.0" y1="60" x2="692.0" y2="520" stroke="#dddddd" stroke-width="1"/>
+<line x1="80" y1="106.0" x2="760" y2="106.0" stroke="#dddddd" stroke-width="1"/>
+<text x="692.0" y="544" text-anchor="middle" font-family="Arial" font-size="12">0.9</text>
+<text x="68" y="110.0" text-anchor="end" font-family="Arial" font-size="12">0.9</text>
+<line x1="760.0" y1="60" x2="760.0" y2="520" stroke="#dddddd" stroke-width="1"/>
+<line x1="80" y1="60.0" x2="760" y2="60.0" stroke="#dddddd" stroke-width="1"/>
+<text x="760.0" y="544" text-anchor="middle" font-family="Arial" font-size="12">1.0</text>
+<text x="68" y="64.0" text-anchor="end" font-family="Arial" font-size="12">1.0</text>
+<line x1="80" y1="520" x2="760" y2="520" stroke="black" stroke-width="2"/>
+<line x1="80" y1="60" x2="80" y2="520" stroke="black" stroke-width="2"/>
+<text x="420.0" y="575" text-anchor="middle" font-family="Arial" font-size="16">Umidade Normalizada</text>
+<text x="22" y="290.0" text-anchor="middle" font-family="Arial" font-size="16" transform="rotate(-90 22 300)">Pressao Normalizada</text>
+<polyline points="80.0,202.2 86.8,201.5 93.6,200.8 100.4,200.0 107.2,199.3 114.0,198.6 120.8,197.8 127.6,197.1 134.4,196.3 141.2,195.6 148.0,194.9 154.8,194.1 161.6,193.4 168.4,192.7 175.2,191.9 182.0,191.2 188.8,190.5 195.6,189.7 202.4,189.0 209.2,188.2 216.0,187.5 222.8,186.8 229.6,186.0 236.4,185.3 243.2,184.6 250.0,183.8 256.8,183.1 263.6,182.3 270.4,181.6 277.2,180.9 284.0,180.1 290.8,179.4 297.6,178.7 304.4,177.9 311.2,177.2 318.0,176.5 324.8,175.7 331.6,175.0 338.4,174.2 345.2,173.5 352.0,172.8 358.8,172.0 365.6,171.3 372.4,170.6 379.2,169.8 386.0,169.1 392.8,168.4 399.6,167.6 406.4,166.9 413.2,166.1 420.0,165.4 426.8,164.7 433.6,163.9 440.4,163.2 447.2,162.5 454.0,161.7 460.8,161.0 467.6,160.3 474.4,159.5 481.2,158.8 488.0,158.0 494.8,157.3 501.6,156.6 508.4,155.8 515.2,155.1 522.0,154.4 528.8,153.6 535.6,152.9 542.4,152.2 549.2,151.4 556.0,150.7 562.8,149.9 569.6,149.2 576.4,148.5 583.2,147.7 590.0,147.0 596.8,146.3 603.6,145.5 610.4,144.8 617.2,144.0 624.0,143.3 630.8,142.6 637.6,141.8 644.4,141.1 651.2,140.4 658.0,139.6 664.8,138.9 671.6,138.2 678.4,137.4 685.2,136.7 692.0,135.9 698.8,135.2 705.6,134.5 712.4,133.7 719.2,133.0 726.0,132.3 732.8,131.5 739.6,130.8 746.4,130.1 753.2,129.3 760.0,128.6" fill="none" stroke="green" stroke-width="4"/>
+<circle cx="216.0" cy="106.0" r="8" fill="orange" stroke="black" stroke-width="1"/>
+<circle cx="318.0" cy="129.0" r="8" fill="orange" stroke="black" stroke-width="1"/>
+<circle cx="182.0" cy="175.0" r="8" fill="orange" stroke="black" stroke-width="1"/>
+<circle cx="352.0" cy="152.0" r="8" fill="orange" stroke="black" stroke-width="1"/>
+<rect x="447.0" y="306.0" width="14" height="14" fill="royalblue" stroke="black" stroke-width="1"/>
+<rect x="651.0" y="375.0" width="14" height="14" fill="royalblue" stroke="black" stroke-width="1"/>
+<rect x="685.0" y="421.0" width="14" height="14" fill="royalblue" stroke="black" stroke-width="1"/>
+<rect x="583.0" y="352.0" width="14" height="14" fill="royalblue" stroke="black" stroke-width="1"/>
+<circle cx="610" cy="92" r="8" fill="orange" stroke="black"/>
+<text x="628" y="97" font-family="Arial" font-size="14">Sol (-1)</text>
+<rect x="602" y="115" width="16" height="16" fill="royalblue" stroke="black"/>
+<text x="628" y="128" font-family="Arial" font-size="14">Chuva (1)</text>
+<line x1="600" y1="150" x2="620" y2="150" stroke="green" stroke-width="4"/>
+<text x="628" y="155" font-family="Arial" font-size="14">Fronteira</text>
+</svg>
